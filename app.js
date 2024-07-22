@@ -30,6 +30,10 @@ app.use(
     tempFileDir: "/tmp/",
   })
 );
+
+// Handle preflight OPTIONS requests
+app.options("*", cors());
+
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/application", applicationRouter);
 app.use("/api/v1/job", jobRouter);
