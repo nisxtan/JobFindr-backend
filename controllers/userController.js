@@ -61,5 +61,6 @@ export const getUser = catchAsyncError((req, res, next) => {
   res.status(200).json({
     success: true,
     user,
+    message: "HELLO",
   });
 });

@@ -13,6 +13,23 @@ const jobSchema = new mongoose.Schema({
     minLength: [3, "Job description must contain atleast 3 characters."],
     maxLength: [350, "Job description can not exceed 350 characters."],
   },
+  category: {
+    type: String,
+    required: [true, "Please provide a category."],
+    enum: [
+      "Graphics & Design",
+      "Mobile App Development",
+      "Frontend Web Development",
+      "MERN Stack Development",
+      "Account & Finance",
+      "Artificial Intelligence",
+      "Video Animation",
+      "MEAN Stack Development",
+      "MEVN Stack Development",
+      "Data Entry Operator",
+    ],
+    message: "{VALUE} is not a valid category", // Custom error message
+  },
   country: {
     type: String,
     required: [true, "Job country is required."],
